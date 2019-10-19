@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.Form_tacheCreate">
+
+    <EditText
+        android:id="@+id/nom_tache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:maxLines="1"
+        android:maxLength="30"
+        android:lines="1"
+        android:ems="10"
+        android:hint="Nom de la Tache"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/desc_tache"
+        />
+
+    <EditText
+        android:id="@+id/desc_tache"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:maxLines="8"
+        android:lines="8"
+        android:maxLength="80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Description de la Tache"
+        android:layout_below="@+id/nom_tache"
+        />
+
+    <Button
+        android:id="@+id/debut_bt"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/nom_tache"
+        android:layout_above="@+id/fin_bt"
+        android:ems="8"
+        android:onClick="goDebut"
+        android:text="debut Tache" />
+
+    <Button
+        android:id="@+id/fin_bt"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/nom_tache"
+        android:layout_above="@+id/ajouter_tache"
+        android:ems="8"
+        android:onClick="goFin"
+        android:text="Fin Tache" />
+
+
+    <TextView
+        android:id="@+id/heure_txt"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/debut_bt"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="23dp"
+        android:text="tes"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toEndOf="@+id/fin_bt"
+        app:layout_constraintTop_toBottomOf="@+id/calendrier_txt"
+        app:layout_constraintVertical_bias="0.031" />
+
+    <TextView
+        android:id="@+id/calendrier_txt"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fin_bt"
+        android:layout_alignStart="@+id/heure_txt"
+        android:layout_marginStart="0dp"
+        android:text="tes"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ajouter_bt"
+        app:layout_constraintTop_toBottomOf="@+id/desc_tache" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nom_tache"
+        android:layout_alignEnd="@+id/heure_txt"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/Priority" />
+
+    <Button
+        android:id="@+id/ajouter_tache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:ems="100"
+        android:onClick="goAjouter"
+        android:text="Ajouter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</RelativeLayout>
